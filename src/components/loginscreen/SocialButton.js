@@ -1,15 +1,25 @@
-import React, { useState } from "react";
-
-function SocialButton({ logo, hoverLogo }) {
-  const [svgColor, changeSvgColor] = useState(false);
-
+function SocialButton({ svg }) {
   return (
     <button
-      onMouseEnter={() => { changeSvgColor(true) }}
-      onMouseLeave={() => { changeSvgColor(false) }}
-      className="SocialIcon hover:border-primary-blue flex items-center w-1 justify-center grow rounded-lg border h-12"
+      className="
+      hover:border-primary-blue
+      flex
+      items-center
+      w-1
+      justify-center
+      grow 
+      rounded-lg 
+      border
+      border-social-icon-border
+      h-12
+      dark:border-white-icon
+      dark:hover:border-primary-blue
+      dark:fill-white-icon
+      dark:hover:fill-primary-blue
+      hover:fill-primary-blue
+      "
     >
-      <img src={svgColor ? hoverLogo : logo} alt="icon" />
+      {svg}
     </button >
   );
 }

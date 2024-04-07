@@ -6,11 +6,13 @@ import LoginFields from '../components/loginscreen/LoginFields';
 import Captcha from '../components/loginscreen/Captcha';
 import IconButton from '../components/loginscreen/IconButton';
 import RecoverPassword from '../components/loginscreen/RecoverPassword';
+import DarkToggle from '../components/loginscreen/DarkToggle';
 
 function LoginScreen() {
   return (
-    <div className="flex flex-row justify-center p-12 font-inter">
+    <div className="flex flex-row justify-center p-12 font-inter dark:bg-dark dark:text-white">
       <div className="Login">
+        <DarkToggle />
         <Header />
         <Greetings />
         <SocialLogin />

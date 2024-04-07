@@ -9,9 +9,9 @@ function Input({ title, icon1, icon2, icon3, placeholder, type }) {
       <div className="Login-border flex rounded-lg my-2 p-4 border gap-4 hover:border-primary-blue">
         <img className="flex-none" src={icon1} alt={"icon login"} />
         <input
-          className="grow outline-0"
+          className="grow outline-0 bg-transparent text-dark-text"
           placeholder={placeholder}
-          type={type}
+          type={showPassword ? "text" : type}
         />
         {icon2 &&
           <img
