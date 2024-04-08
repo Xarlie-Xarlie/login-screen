@@ -1,9 +1,12 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
 const PORT = process.env.PORT || 3333;
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(cors());
 
 // Route for /login
 app.post('/login', (req, res) => {
@@ -15,7 +18,7 @@ app.post('/login', (req, res) => {
     return res.sendStatus(200);
   } else {
     // If incorrect, return status code 401 (Unauthorized)
-    return res.status(401).json({ error: 'Wrong username or password' });
+    return res.sendStatus(401);
   }
 });
 

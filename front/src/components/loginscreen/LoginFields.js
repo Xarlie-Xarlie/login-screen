@@ -4,7 +4,7 @@ import lock from "../../../src/svg/lock.svg";
 import closed_eye from "../../../src/svg/closed_eye.svg";
 import eye from "../../../src/svg/eye.svg";
 
-function LoginFields() {
+function LoginFields({ setUsername, setPassword, login }) {
   const loginElements = [
     {
       title: "Usuário",
@@ -12,7 +12,8 @@ function LoginFields() {
       icon2: null,
       icon3: null,
       placeholder: "aluno200_1u",
-      type: "text"
+      type: "text",
+      setValue: setUsername
     },
     {
       title: "Senha",
@@ -20,12 +21,13 @@ function LoginFields() {
       icon2: closed_eye,
       icon3: eye,
       placeholder: "********",
-      type: "password"
+      type: "password",
+      setValue: setPassword
     }
   ];
 
   return (
-    <div className="flex flex-col p-6 gap-4">
+    <div className="flex flex-col p-6 gap-2">
       {loginElements.map((loginField, index) =>
         <Input
           key={index}
@@ -34,10 +36,13 @@ function LoginFields() {
           icon2={loginField.icon2}
           icon3={loginField.icon3}
           type={loginField.type}
+          login={login}
+          setValue={loginField.setValue}
           placeholder={loginField.placeholder}
           hidden={loginField.hidden}
         />
       )}
+      <p className={login === 'failed' ? "visible text-red-500" : "invisible"}>Wrong username or password</p>
       <div className="flex font-normal text-sm">
         <input
           type="checkbox"
@@ -52,7 +57,7 @@ function LoginFields() {
         />
         Manter conectado
       </div>
-    </div>
+    </div >
   );
 }
 

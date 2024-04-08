@@ -1,6 +1,6 @@
 import sign from "../../../src/svg/plus.svg";
 
-function IconButton() {
+function IconButton({ handleLogin }) {
   return (
     <div className="p-6">
       <button
@@ -17,6 +17,7 @@ function IconButton() {
         text-white
         hover:bg-sky-400
         "
+        onClick={handleLogin}
       >
         <img className="my-3.5" src={sign} alt={sign} />
         <p className="my-2">Entrar</p>
