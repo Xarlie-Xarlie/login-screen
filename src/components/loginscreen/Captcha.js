@@ -9,7 +9,6 @@ function Captcha() {
 
   return (
     <div className="p-6 flex justify-center">
-      {/* Add your form fields here */}
       <HCaptcha
         id="capctha"
         sitekey="3ddcf806-7516-4a81-aac1-61447a4be6ff"

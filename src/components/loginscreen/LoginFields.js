@@ -42,11 +42,10 @@ function LoginFields() {
         <input
           type="checkbox"
           className="
-          Keep-connected
           mr-3
           w-5
-          checked:ring-sky-400
           h-5
+          border-keep-connected
           rounded-sm
           border-2
           "

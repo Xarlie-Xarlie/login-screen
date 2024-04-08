@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
+  bannerOpen: 'class',
+  bannerClosed: 'class',
   content: ["./src/**/*.{js, jsx, ts, tsx}"],
   theme: {
     extend: {
@@ -11,11 +13,13 @@ module.exports = {
         'dark-text': '#909090',
         'white-icon': '#F5F5F5',
         'social-icon-border': '#151515',
-        'toolzz-svg': '#0761E2',
-        'toolzz-svg-blue': '#0E0E0E'
+        'login': '#6A6A6A',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+      },
+      transitionProperty: {
+        'width': 'width'
       },
     },
   },

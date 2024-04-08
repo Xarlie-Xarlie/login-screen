@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import LoginScreen from './screens/LoginScreen';
+import BannerLogin from './screens/BannerLogin';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LoginScreen />
+    <BannerLogin />
   </React.StrictMode>
 );
 
