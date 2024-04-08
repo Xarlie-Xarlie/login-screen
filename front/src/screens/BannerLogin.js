@@ -24,6 +24,11 @@ const moonSvg =
 const sunSvg =
   <svg class="feather feather-sun" width="48" height="48" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5" /><line x1="12" x2="12" y1="1" y2="3" /><line x1="12" x2="12" y1="21" y2="23" /><line x1="4.22" x2="5.64" y1="4.22" y2="5.64" /><line x1="18.36" x2="19.78" y1="18.36" y2="19.78" /><line x1="1" x2="3" y1="12" y2="12" /><line x1="21" x2="23" y1="12" y2="12" /><line x1="4.22" x2="5.64" y1="19.78" y2="18.36" /><line x1="18.36" x2="19.78" y1="5.64" y2="4.22" /></svg>
 
+const arrowSvg =
+  <svg width="32" height="31" viewBox="0 0 32 31" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M12 29C11.4375 29 10.9375 28.8125 10.5625 28.4375C9.75 27.6875 9.75 26.375 10.5625 25.625L21.125 15L10.5625 4.4375C9.75 3.6875 9.75 2.375 10.5625 1.625C11.3125 0.8125 12.625 0.8125 13.375 1.625L25.375 13.625C26.1875 14.375 26.1875 15.6875 25.375 16.4375L13.375 28.4375C13 28.8125 12.5 29 12 29Z" />
+  </svg>
 
 function BannerLogin() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -50,9 +55,34 @@ function BannerLogin() {
   return (
     <div className="flex justify-center h-screen dark:bg-dark ">
       <div
-        className={`${isBannerOpen ? "w-[1228px] grow " : "w-0 grow-0"} lg:block md:block hidden duration-1000 h-full bg-cover`}
+        className={`${isBannerOpen ? "w-[1228px] grow" : "w-0 grow-0"}
+        lg:block md:block hidden duration-1000 h-full bg-cover`}
         style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%), url(${img})` }}
       >
+        <div className="flex flex-col justify-end h-full px-12 py-20">
+          <p className="text-white rounded-full bg-primary-blue w-full px-4 py-2 max-w-20">Cursos</p>
+          <p className="text-white mt-5 text-2xl font-semibold">Plataforma de cursos completa</p>
+          <p className="text-[#909090] mt-4 text-xl font-medium">
+            Lorem ipsum nisl etiam himenaeos ligula augue vehicula
+            gravida tincidunt, etiam magna sapien gravida sodales sed vel
+            pulvinar suspendisse, morbi mi proin urna ornare posuere donec
+            aptent. orci vivamus primis fusce lacinia libero nostra
+            aliquam vestibulum
+          </p>
+
+          <div className="flex flex-row justify-between mt-24 h-1">
+            <div className="flex gap-4">
+              <div className="flex-none h-1 w-24 bg-white"></div>
+              <div className="flex-none h-1 w-24 bg-[#222222] "></div>
+              <div className="flex-none h-1 w-24 bg-[#222222] "></div>
+            </div>
+
+            <div className="flex justify-end -my-3 gap-4">
+              <label className="cursor-pointer fill-[#3A3A3A] rotate-180">{arrowSvg}</label>
+              <label className="cursor-pointer fill-white">{arrowSvg}</label>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="my-6 w-[692px] font-inter dark:text-white overflow-auto">
         <div className="px-6 flex flex-row-reverse justify-between">
