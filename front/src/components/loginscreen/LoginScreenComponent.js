@@ -7,6 +7,8 @@ import LoginFields from './LoginFields';
 import Captcha from './Captcha';
 import IconButton from './IconButton';
 import RecoverPassword from './RecoverPassword';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function LoginScreenComponent() {
   const [username, setUsername] = useState("");
@@ -33,16 +35,44 @@ function LoginScreenComponent() {
         // Handle response from the server
         if (response.ok) {
           // Login successful, handle it accordingly
+          toast.success('Login Successful!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
           setLogin(["successful", "ok"]);
-
         } else {
           // Login failed, handle it accordingly
-          setLogin("failed")
+          setLogin("failed");
+          toast.error('Login Failed!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
         }
       })
       .catch(error => {
-        // Handle any errors that occurred during the request
-        console.error('Error:', error);
+        toast.info('Service Unavailable!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+
       });
   };
 
@@ -56,6 +86,7 @@ function LoginScreenComponent() {
       <Captcha />
       <IconButton handleLogin={handleLogin} />
       <RecoverPassword />
+      <ToastContainer />
     </div>
   );
 }

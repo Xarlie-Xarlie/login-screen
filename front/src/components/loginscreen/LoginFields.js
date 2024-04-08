@@ -42,7 +42,6 @@ function LoginFields({ setUsername, setPassword, login }) {
           hidden={loginField.hidden}
         />
       )}
-      <p className={login === 'failed' ? "visible text-red-500" : "invisible"}>Wrong username or password</p>
       <div className="flex font-normal text-sm">
         <input
           type="checkbox"

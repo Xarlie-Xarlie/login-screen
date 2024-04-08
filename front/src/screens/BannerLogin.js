@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LoginScreenComponent from "../components/loginscreen/LoginScreenComponent";
-import img from "../svg/language-student-online.jpg"
+import img from "../language-student-online.jpg"
 
 const backButtonSvg =
   <svg width="48" fill="none" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@ function BannerLogin() {
   return (
     <div className="flex justify-center h-screen dark:bg-dark ">
       <div
-        className={`${isBannerOpen ? "w-full grow " : "w-0 grow-0"} lg:block md:block hidden duration-1000 h-full bg-cover`}
+        className={`${isBannerOpen ? "w-[1228px] grow " : "w-0 grow-0"} lg:block md:block hidden duration-1000 h-full bg-cover`}
         style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%), url(${img})` }}
       >
       </div>
