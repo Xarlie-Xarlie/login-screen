@@ -1,16 +1,16 @@
 # Login Screen Project
 
----
-
 ## Clone Repository:
+
 ```bash
 git clone https://github.com/Xarlie-Xarlie/login-screen.git
 ```
 
----
+```bash
+cd login-screen
+```
 
 ### How to test:
-
 
 1. Using Docker and Docker-compose (Recommended):
 
@@ -20,7 +20,7 @@ docker-compose up -d
 
 It will automatically fetch all images and install depencies to run your containers.
 
-Visit:
+Visit in browser:
 
 ```
 http://localhost:3333
