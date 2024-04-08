@@ -59,7 +59,7 @@ function BannerLogin() {
         lg:block md:block hidden duration-1000 h-full bg-cover`}
         style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%), url(${img})` }}
       >
-        <div className="flex flex-col justify-end h-full px-12 py-20">
+        <div className={`${isBannerOpen ? "h-full" : "hidden"} flex flex-col justify-end px-12 py-20`}>
           <p className="text-white rounded-full bg-primary-blue w-full px-4 py-2 max-w-20">Cursos</p>
           <p className="text-white mt-5 text-2xl font-semibold">Plataforma de cursos completa</p>
           <p className="text-[#909090] mt-4 text-xl font-medium">
@@ -95,7 +95,7 @@ function BannerLogin() {
         </div>
         <LoginScreenComponent />
       </div>
-    </div>
+    </div >
   );
 }
 
